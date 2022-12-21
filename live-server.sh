@@ -1,0 +1,1 @@
+lsof -ti tcp:8089 | xargs kill -9 && nodemon -e js,scss 

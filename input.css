@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+.password-input-field {
+  @apply appearance-none block w-full border-red-800 bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white
+}
+
+.field-label {
+  @apply whitespace-nowrap block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2
+}
+
+
+
+
+/* .selector {
+  @apply block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500
+} */
+
+/* .numeric-input {
+  @apply appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white  
+}
+
+.numeric-input-div {
+  @apply min-w-24 max-w-24 mb-6
+} */
+
+/* .checkbox {
+  @apply w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600
+}
+
+.checkbox-label {
+  @apply ml-2 text-sm font-medium text-gray-900 pr-4
+} */
+
+/* appearance-none block w-full border-red-800 bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white */

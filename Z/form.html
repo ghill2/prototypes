@@ -1,0 +1,117 @@
+<div class="flex flex-col justify-center items-center">
+	<form action="/add_device" method="GET" class="w-full max-w-lg flex flex-col justify-center items-center">
+		<div class="flex flex-wrap -mx-3 mb-6">
+			
+			<!-- Device Name (alphanumeric characters only) -->
+			<div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+				<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="device-name">
+					Device Name
+				</label>
+				<input required id="device-name" type="text" pattern="^[a-zA-Z0-9_]*$" minlength="3" maxlength="20"  placeholder="Device Name" 
+						class="appearance-none block w-full border-red-800 bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
+				<p id="device-name-error-msg" class="text-red-500 text-xs italic">Please fill out this field.</p>
+			</div>
+
+			<!-- Device Type  -->
+			<div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+				<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-type">
+					Device Type
+				</label>
+				<div class="relative">
+					<select id="device-type" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+						<option>Cooling</option>
+						<option>Heating</option>
+						<option>Curtains</option>
+						<option>Blinds</option>
+						<option>Lighting</option>
+						<option>Security</option>
+						<option>TV</option>
+						<option>Radio</option>
+						<option>Music Player</option>
+						<option>Fridge</option>
+						<option>Hob</option>
+						<option>Oven</option>
+						<option>Microwave</option>
+					</select>
+					<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+						<svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+					</div>
+				</div>
+			</div>
+			
+
+			<!-- Value input row -->
+			<div class="flex w-full">
+				<!-- Volume (number input) -->
+				<div id="volume-div" class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+					<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="volume">
+						Volume (dB)
+					</label>
+					<input type="number" min="-180" max="180" id="volume" class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
+				</div>
+
+				<!-- Temperate  (number input) -->
+				<div id="temperature-div" class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+					<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="temperature">
+						Temperate (°C)
+					</label>
+					<input type="number" min="0" max="100" id="temperature" class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
+				</div>
+			</div>
+			
+			<!-- Buttons -->
+			<div class="flex w-full">
+				
+				<!-- On/Off (radio) -->
+				<div id="on-off-radio">
+					<div class="flex items-center mb-4">
+						<input id="default-radio-1" type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+						<label for="default-radio-1" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+							Off
+						</label>
+					</div>
+					<div class="flex items-center">
+						<input checked id="default-radio-2" type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+						<label for="default-radio-2" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+							On
+						</label>
+					</div>
+				</div>
+
+				<!-- Open/Close (radio) -->
+				<div id="open-close-radio">
+					<div class="flex items-center mb-4">
+						<input id="default-radio-1" type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+						<label for="default-radio-1" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+							Closed
+						</label>
+					</div>
+					<div class="flex items-center">
+						<input checked id="default-radio-2" type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+						<label for="default-radio-2" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+							Opened
+						</label>
+					</div>
+				</div>
+
+
+			</div>
+			<!-- -->
+
+			<!-- Submit Button -->
+			<div class="md:flex md:items-center">
+				<div class="md:w-1/3">
+					<div class="md:w-2/3">
+						<input type="submit" value="Submit" class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">
+						<!-- <button class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
+							Submit
+						</button> -->
+					</div>
+				</div>
+			</div>
+
+			
+	
+		</div>
+	</form>
+</div>
